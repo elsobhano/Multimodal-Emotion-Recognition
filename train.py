@@ -7,7 +7,7 @@ from callbacks import MyPrintingCallback, EarlyStopping
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.profilers import PyTorchProfiler
 
-torch.set_float32_matmul_precision("medium") # to make lightning happy
+torch.set_float32_matmul_precision("medium") # make lightning happy
 
 if __name__ == "__main__":
     logger = TensorBoardLogger("tb_logs", name="model_v1")
