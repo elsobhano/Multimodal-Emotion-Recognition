@@ -12,7 +12,7 @@ Here we have used pre-trained Transformer-Based models as a backbone and then fi
 
 **ClipBERT**, an efficient framework for end-to-end learning for image-text and video-text tasks. It takes raw videos/images + text as inputs, and outputs task predictions. ClipBERT is designed based on 2D CNNs and transformers, and uses a sparse sampling strategy to enable efficient end-to-end video-and-language learning. For more detailed information about ClipBERT and its application check out this [link.](https://github.com/jayleicn/ClipBERT)
 
-![avatar](ClipBERT.JPG)
+![avatar](ClipBERT.png)
 
 
 
