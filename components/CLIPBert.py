@@ -634,11 +634,8 @@ class ClipBertForSequenceClassification(BertPreTrainedModel):
 
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
-        logits, loss = self.calc_loss(logits, labels)
-        return dict(
-            logits=logits,
-            loss=loss
-        )
+        # logits, loss = self.calc_loss(logits, labels)
+        return logits
 
     def calc_loss(self, logits, labels):
         logits = logits
