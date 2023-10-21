@@ -30,9 +30,10 @@ for param in img_model.parameters():
     param.requires_grad = False
 
 class GridFeatBackbone(nn.Module):
-    def __init__(self, img_model):
+    def __init__(self):
         super().__init__()
-        self.feature = nn.Sequential(*list(img_model.children())[:-2])
+        self.img_back = img_model
+        self.feature = nn.Sequential(*list(self.img_back.children())[:-2])
 
         self.grid_encoder = nn.Sequential(
             conv3x3(config.backbone_channel_in_size, config.hidden_size),
