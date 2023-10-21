@@ -13,18 +13,18 @@ from components.CLIPBert import  ClipBertForSequenceClassification
 from components.Resnet import GridFeatBackbone
 
 class ClipBert(pl.LightningModule):
-    def __init__(self, config, learning_rate, num_classes):
+    def __init__(self, config):
         super().__init__()
         self.config = config
         self.cnn = GridFeatBackbone()
         self.transformer = ClipBertForSequenceClassification(self.config)
 
-        self.lr = learning_rate
+        self.lr = config.LEARNING_RATE
         self.loss_fn = nn.CrossEntropyLoss()
         self.accuracy = torchmetrics.Accuracy(
-            task="multiclass", num_classes=num_classes
+            task="multiclass", num_classes=config.num_labels
         )
-        self.f1_score = torchmetrics.F1Score(task="multiclass", num_classes=num_classes)
+        self.f1_score = torchmetrics.F1Score(task="multiclass", num_classes=config.num_labels)
 
     def forward(self, batch):
         visual_features = self.cnn(batch["visual_inputs"])
