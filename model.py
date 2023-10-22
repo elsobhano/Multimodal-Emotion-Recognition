@@ -1,14 +1,7 @@
 import torch
-import torch.nn.functional as F
-import torchvision.datasets as datasets
-import torchvision.transforms as transforms
 from torch import nn, optim
-from torch.utils.data import DataLoader
-from tqdm import tqdm
 import pytorch_lightning as pl
 import torchmetrics
-from torchmetrics import Metric
-import torchvision
 from components.CLIPBert import  ClipBertForSequenceClassification
 from components.Resnet import GridFeatBackbone
 
