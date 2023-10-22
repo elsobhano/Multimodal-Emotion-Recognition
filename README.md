@@ -16,5 +16,12 @@ Here we have used pre-trained Transformer-Based models as a backbone and then fi
 <img src="ClipBERT.png" width="450">
 </p>
 
+#### Use ```pl.Trainer``` class
+
+A class called ‍‍‍‍‍‍```pl.Trainer``` has been prepared for training models. Using ```pl.Trainer```, you can easily and without specialized knowledge specify the model, cost function, model hyperparameters, cost function hyperparameters, etc. Then train your model.
+
+```python
+python train.py
+```
 
 
